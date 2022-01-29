@@ -9,11 +9,11 @@ const routes = require('./routes')
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+// Serve up static assets
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
 }
+
 
 // allows routing for both html and api routes
 app.use(routes)
