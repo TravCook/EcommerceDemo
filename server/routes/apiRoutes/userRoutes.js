@@ -4,6 +4,6 @@ const userController = require('../../controllers/userController')
 
 // this is the signup route
 router.route('/signup')
-  .get(userController.findAll)
+  .post(userController.create)
 
 module.exports = router

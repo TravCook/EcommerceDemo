@@ -1,9 +1,10 @@
 const db = require('../models/index')
 
 module.exports = {
-  findAll: (req, res) => {
-    res.json({
-      look: "u did it"
-    })
+  create: (req, res) => {
+    db.User
+      .create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   }
 }
