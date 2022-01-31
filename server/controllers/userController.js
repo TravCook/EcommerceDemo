@@ -1,5 +1,4 @@
 const db = require('../models/index');
-const { findOne } = require('../models/userModel');
 
 module.exports = {
   create: (req, res) => {
